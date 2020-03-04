@@ -13,6 +13,10 @@ namespace LINQ_Demo
 
             var lambdaDemo = new LambdaDemo();
             lambdaDemo.FilterCollection();
+
+            lambdaDemo.UseCustomFilter();
+
+            lambdaDemo.GetNRandomDoubles(10);
         }
     }
 
