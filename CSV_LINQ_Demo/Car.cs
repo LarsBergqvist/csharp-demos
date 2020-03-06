@@ -10,7 +10,9 @@ namespace CSV_LINQ_Demo
         public double Displacement { get; set; }
         public int Cylinders { get; set; }
         public int CombinedFuelEfficiency { get; set; }
-        internal static Car TransformFromString(string line, int arg2)
+
+        /*
+        internal static Car TransformFromString(string line)
         {
             var columns = line.Split(';');
             return new Car
@@ -24,5 +26,6 @@ namespace CSV_LINQ_Demo
                 CombinedFuelEfficiency = int.Parse(columns[8])
             };
         }
+        */
     }
 }
