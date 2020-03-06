@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CSV_LINQ_Demo
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
@@ -31,11 +31,50 @@ namespace CSV_LINQ_Demo
                         c.Model,
                         c.CombinedFuelEfficiency
                     });
-
+            Console.WriteLine();
             Console.WriteLine("50 most fuel efficient cars in collection:");
             foreach(var car in query.Take(50))
             {
                 Console.WriteLine($"{car.Division} {car.Model} : {car.CombinedFuelEfficiency}");
+            }
+
+            Console.WriteLine("Manufacturer information:");
+            //            var groupQuery = from car in cars
+            //                             group car by car.Manufacturer into manufacturer
+            //                             orderby manufacturer.Key
+            //                             select manufacturer;
+            var groupQuery = cars.GroupBy(c => c.Manufacturer)
+                .OrderBy(g => g.Key);
+            Console.WriteLine();
+            foreach (var result in groupQuery)
+            {
+                Console.WriteLine($"{result.Key} has {result.Count()} models");
+            }
+
+            // Custom aggregation with method syntax
+            var statQuery = cars.GroupBy(c => c.Manufacturer)
+                .Select(g =>
+                {
+                    var result = g.Aggregate(new CarStat(),
+                        (acc, c) => acc.Accumulate(c),  // for each car
+                        acc => acc.Compute());          // final calculation of statistics
+                    return new
+                    {
+                        Name = g.Key,
+                        Avg = result.Average,
+                        result.Min,
+                        result.Max
+                    };
+                })
+                .OrderBy(o => o.Max);
+            Console.WriteLine();
+            Console.WriteLine("Fuel efficieny stats per manufacturer:");
+            foreach (var result in statQuery.OrderBy(m => m.Name))
+            {
+                Console.WriteLine($"{result.Name}");
+                Console.WriteLine($"\tMax: {result.Max}");
+                Console.WriteLine($"\tMin: {result.Min}");
+                Console.WriteLine($"\tAverage: {result.Avg}");
             }
         }
 
@@ -48,27 +87,6 @@ namespace CSV_LINQ_Demo
 //                .Select(line => Car.TransformFromString(line));
 
             return result.ToList<Car>();
-        }
-    }
-
-    public static class CarExtensions
-    {
-        public static IEnumerable<Car> ToCar(this IEnumerable<string> source)
-        {
-            foreach(var line in source)
-            {
-                var columns = line.Split(';');
-                yield return new Car
-                {
-                    ModelYear = int.Parse(columns[0]),
-                    Manufacturer = columns[1],
-                    Division = columns[2],
-                    Model = columns[3],
-                    Displacement = double.Parse(columns[4]),
-                    Cylinders = int.Parse(columns[5]),
-                    CombinedFuelEfficiency = int.Parse(columns[8])
-                };
-            }
         }
     }
 }
