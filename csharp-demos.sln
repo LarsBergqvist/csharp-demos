@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV_LINQ_Demo", "CSV_LINQ_D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullableDemo", "NullableDemo\NullableDemo.csproj", "{3D0BE8DE-625B-4EF3-99DA-B5A3D3C4A310}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeconstructionDemo", "DeconstructionDemo\DeconstructionDemo.csproj", "{A970EDCD-430B-45CE-BCF7-184500B22B99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,5 +39,9 @@ Global
 		{3D0BE8DE-625B-4EF3-99DA-B5A3D3C4A310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D0BE8DE-625B-4EF3-99DA-B5A3D3C4A310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D0BE8DE-625B-4EF3-99DA-B5A3D3C4A310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A970EDCD-430B-45CE-BCF7-184500B22B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A970EDCD-430B-45CE-BCF7-184500B22B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A970EDCD-430B-45CE-BCF7-184500B22B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A970EDCD-430B-45CE-BCF7-184500B22B99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
