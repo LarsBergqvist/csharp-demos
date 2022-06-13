@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullableDemo", "NullableDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeconstructionDemo", "DeconstructionDemo\DeconstructionDemo.csproj", "{A970EDCD-430B-45CE-BCF7-184500B22B99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicsDemo", "DynamicsDemo\DynamicsDemo.csproj", "{EC17F10D-AFC2-4C42-BFE6-D58566821A84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,5 +45,9 @@ Global
 		{A970EDCD-430B-45CE-BCF7-184500B22B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A970EDCD-430B-45CE-BCF7-184500B22B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A970EDCD-430B-45CE-BCF7-184500B22B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC17F10D-AFC2-4C42-BFE6-D58566821A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC17F10D-AFC2-4C42-BFE6-D58566821A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC17F10D-AFC2-4C42-BFE6-D58566821A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC17F10D-AFC2-4C42-BFE6-D58566821A84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
