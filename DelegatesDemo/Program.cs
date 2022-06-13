@@ -68,10 +68,5 @@ namespace DelegatesDemo
         {
             Console.WriteLine("Progress handler2: " + e.Progress);
         }
-
-        static void WorkCompleteEvenHandler(object? sender, EventArgs e)
-        {
-            Console.WriteLine("Complete!");
-        }
     }
 }
