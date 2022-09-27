@@ -1,11 +1,5 @@
-﻿using System;
-namespace DynamicsDemo
-{
-	public class DomainEvent
-	{
-		public DomainEvent()
-		{
-		}
-	}
-}
+﻿namespace DynamicsDemo;
 
+public class DomainEvent
+{
+}

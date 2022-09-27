@@ -1,14 +1,11 @@
-﻿using System;
-namespace DynamicsDemo
+﻿namespace DynamicsDemo;
+
+public class WithdrawCredit: DomainEvent
 {
-	public class WithdrawCredit: DomainEvent
+	public WithdrawCredit(decimal amount)
 	{
-		public WithdrawCredit(decimal amount)
-		{
-			Amount = amount;
-		}
+		Amount = amount;
+	}
 
-        public decimal Amount { get; }
-    }
+	public decimal Amount { get; }
 }
-

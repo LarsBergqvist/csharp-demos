@@ -1,14 +1,11 @@
-﻿using System;
-namespace DynamicsDemo
+﻿namespace DynamicsDemo;
+
+public class AddCredit : DomainEvent
 {
-	public class AddCredit : DomainEvent
+	public AddCredit(decimal amount)
 	{
-		public AddCredit(decimal amount)
-		{
-			Amount = amount;
-		}
+		Amount = amount;
+	}
 
-        public decimal Amount { get; }
-    }
+	public decimal Amount { get; }
 }
-

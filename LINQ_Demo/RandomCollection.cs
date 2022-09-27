@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LINQ_Demo
+namespace LINQ_Demo;
+
+public static class RandomCollection
 {
-    public static class RandomCollection
+    public static IEnumerable<double> Random()
     {
-        public static IEnumerable<double> Random()
+        var random = new Random();
+        while (true)
         {
-            var random = new Random();
-            while (true)
-            {
-                yield return random.NextDouble();
-            }
+            yield return random.NextDouble();
         }
     }
 }

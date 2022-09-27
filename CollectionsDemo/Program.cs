@@ -1,31 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CollectionsDemeo
+namespace CollectionsDemo;
+
+internal static class Program
 {
-    class Program
+    private static void Main()
     {
-        static void Main(string[] args)
+        IEnumerable<string> items = new List<string>()
         {
-            IEnumerable<string> items = new List<string>()
-            {
-                "monkey",
-                "ball",
-                "bike"
-            };
+            "monkey",
+            "ball",
+            "bike"
+        };
 
 
-            foreach(var item in items)
-            {
-                Console.WriteLine(item);
-            }
+        foreach(var item in items)
+        {
+            Console.WriteLine(item);
+        }
 
-            // Manually use enumerator of collection
-            var enumerator = items.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                Console.WriteLine(enumerator.Current);
-            }
+        // Manually use enumerator of collection
+        using var enumerator = items.GetEnumerator();
+        while (enumerator.MoveNext())
+        {
+            Console.WriteLine(enumerator.Current);
         }
     }
 }

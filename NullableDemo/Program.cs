@@ -13,13 +13,13 @@ Console.WriteLine(item1.Customer?.Name ?? "No customer defined");
 // Should handle null reference
 Console.WriteLine(item2.Customer?.Name ?? "No customer defined");
 
-class Customer
+internal class Customer
 {
     public string Name { get; set; }
     public Customer(string name) => Name = name;
 }
 
-class Item
+internal class Item
 {
     public string Id { get; set; }
     public Customer? Customer { get; set; }

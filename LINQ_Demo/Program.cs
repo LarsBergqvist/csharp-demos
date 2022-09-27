@@ -1,23 +1,17 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿namespace LINQ_Demo;
 
-namespace LINQ_Demo
+static class Program
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            var fileQueryDemo = new FileQueryDemo();
-            fileQueryDemo.ListFiveLargestFiles(@"./");
+        var fileQueryDemo = new FileQueryDemo();
+        fileQueryDemo.ListFiveLargestFiles(@"./");
 
-            var lambdaDemo = new LambdaDemo();
-            lambdaDemo.FilterCollection();
+        var lambdaDemo = new LambdaDemo();
+        lambdaDemo.FilterCollection();
 
-            lambdaDemo.UseCustomFilter();
+        lambdaDemo.UseCustomFilter();
 
-            lambdaDemo.GetNRandomDoubles(10);
-        }
+        lambdaDemo.GetNRandomDoubles(10);
     }
-
 }
